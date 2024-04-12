@@ -16,7 +16,6 @@ let otherMatrix = [
 
 const rotateMatrix = (matrix) => {
     let levels = Math.floor(matrix.length / 2);
-    console.log(levels);
     for(let i = 0; i < levels; i++) {
         for(let j = i; j < matrix[0].length - i - 1; j++) {
             //Get Corner Values

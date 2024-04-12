@@ -6,6 +6,7 @@ class TreeNode {
     }
 }
 
+// all left descendants  <= n < all right descendants
 class BinarySearchTree {
     constructor() {
         this.root = null;
@@ -72,7 +73,7 @@ class BinarySearchTree {
     }
 }
 
-let bst = new BinarySearchTree();
+let bst = new BinarySearchTree(); //A node is called a leaf if it has no children
 
 bst.insertNode(10);
 bst.insertNode(3);
