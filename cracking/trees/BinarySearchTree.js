@@ -35,6 +35,51 @@ class BinarySearchTree {
         this.insertNodeHelper(this.root, data);
     }
 
+    findSuccessor(node) {
+        if(node.right === null) {
+            return node;
+        }
+
+        return this.findSuccessor(node.right);
+    }
+
+    deleteNode(data, node = this.root) {
+        if(node === null) {
+            return node;
+        }
+
+
+        let nodeValue = node.data;
+
+        if(data > nodeValue) {
+            node.right = this.deleteNode(data, node.right);
+            return node;
+        } else if (data < nodeValue) {
+            node.left = this.deleteNode(data, node.left);
+            return node;
+        }
+
+        // Case 1: No Children
+        if(node.left === null && node.right === null) {
+            return null; 
+        }
+
+        // Case 2: One Child
+        if(node.right === null) {
+            return node.left;
+        } else if(node.left === null) {
+            return node.right;
+        }
+
+        // Case 3: Both Children
+        let maxNodeOfLeftSubtree = this.findSuccessor(node.left);
+        node.data = maxNodeOfLeftSubtree.data;
+        // Delete successor node
+        this.deleteNode(maxNodeOfLeftSubtree.data, node.left);
+        
+        return node;
+    }
+
     printInOrder(node = this.root) {
         //Prints the tree in order
         if(node === null) {
@@ -71,6 +116,8 @@ class BinarySearchTree {
         this.printPreOrder(node.left);
         this.printPreOrder(node.right);
     }
+
+    // TODO: Implement Level Order 
 }
 
 let bst = new BinarySearchTree(); //A node is called a leaf if it has no children
@@ -91,3 +138,13 @@ bst.printPostOrder();
 
 console.log('Pre Order');
 bst.printPreOrder();
+
+
+console.log('Deleting Node');
+bst.printInOrder();
+
+bst.deleteNode(1);
+bst.deleteNode(5);
+
+console.log('After Deletion');
+bst.printInOrder();

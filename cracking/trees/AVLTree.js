@@ -166,6 +166,53 @@ class AVLTree { // Fix the issues of skewed trees. This happens if you insert it
             }
        }
     }
+
+    findSuccessor(node) {
+        if(node.right === null) {
+            return node;
+        }
+        return this.findSuccessor(node.right);
+    }
+
+    deleteNode(value, node = this.root) {
+        if (node === null) {
+            return node;
+        }
+
+        let nodeValue = node.data;
+
+        if(value > nodeValue) {
+            node.right = this.deleteNode(value, node.right);
+            return node;
+        } else if (value < nodeValue) {
+            node.left = this.deleteNode(value, node.left);
+            return node;
+        }
+
+        // Node found
+
+        // Case 1: Leaf Node
+        if( node.left === null && node.right === null) {
+            return null;
+        }
+
+        // Case 2: One Child
+        if(node.left && node.right === null) {
+            return node.left;
+        }
+
+        if(node.right && node.left === null) {
+            return node.right;
+        }
+
+        // Case 3: Both Children
+        
+        // Find the successor of the left sub tree
+        let successor = this.findSuccessor(node.left);
+        this.deleteNode(node.left.data, node.left); // Delete the successor node
+        node.data = successor.data;
+        return node;
+    }
 }
 
 let avl = new AVLTree();
@@ -191,9 +238,15 @@ avl.insertNode(10);
 avl.insertNode(20);
 avl.insertNode(15);
 avl.insertNode(25);
+avl.insertNode(30);
+avl.insertNode(4);
+avl.insertNode(2);
+avl.insertNode(31);
 
 //avl.insertNode(4);
 //avl.insertNode(0);
+
+avl.deleteNode(25)
 
 
 console.log(avl)
