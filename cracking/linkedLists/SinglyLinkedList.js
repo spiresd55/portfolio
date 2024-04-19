@@ -149,5 +149,6 @@ console.log('-----Remove Dups------')
 //console.log(linkedList.removeDuplicates())
 
 module.exports = {
-    SinglyLinkedList
+    SinglyLinkedList,
+    LinkedListNode
 }

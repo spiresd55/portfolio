@@ -1,3 +1,4 @@
+//TODO: Clean up this class
 class StackOfPlates {
     constructor(stackCapacity) {
         this.stacks = [];

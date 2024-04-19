@@ -56,3 +56,5 @@ console.log(removeMiddleNode(linkedList));
 console.log(removeMiddleNode(linkedList));
 console.log(removeMiddleNode(linkedList));
 linkedList.print();
+
+//TODO: Implement remove middle node with being pass a node from a linked list
