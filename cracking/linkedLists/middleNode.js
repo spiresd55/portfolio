@@ -19,10 +19,11 @@ linkedList.insertNode(12);
 
 const removeMiddleNode = (linkedList) => {
     if(!linkedList.root) {
-        return null;
+        return linkedList;
     } else if(!linkedList.root.next) {
         linkedList.size--;
         linkedList.root = null;
+        return;
     }
 
     let prev = linkedList.root;
@@ -40,6 +41,15 @@ const removeMiddleNode = (linkedList) => {
     return linkedList;
 }
 
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
+console.log(removeMiddleNode(linkedList));
 console.log(removeMiddleNode(linkedList));
 console.log(removeMiddleNode(linkedList));
 console.log(removeMiddleNode(linkedList));
