@@ -15,7 +15,6 @@ linkedList.insertNode(10);
 linkedList.insertNode(11);
 linkedList.insertNode(12);
 
-//TODO: WIP
 const reverseList = (linkedList) => {
     // Make a copy of the list
     let list = Object.create(linkedList);
@@ -23,7 +22,7 @@ const reverseList = (linkedList) => {
     if(!list.root) {
         return 'The list is empty';
     }
-    
+
     let prevNode = null;
     let currentNode = list.root;
 
