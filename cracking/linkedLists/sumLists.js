@@ -34,3 +34,20 @@ const sumLists = (list1, list2) => {
 console.log(sumLists(linkedList, linkedList2));
 
 //TODO: Solve the reverse
+const sumListR = (list) => {
+    let str = '';
+    let currentNode = list.root;
+
+    while(currentNode) {
+        str += currentNode.data;
+        currentNode = currentNode.next;
+    }
+
+    return parseInt(str);
+}
+
+const sumListReverse = (list1, list2) => {
+    return sumListR(list1) + sumListR(list2);
+}
+
+console.log(sumListReverse(linkedList, linkedList2));
