@@ -9,11 +9,11 @@ linkedList.insertNode(10);
 linkedList.insertNode(2);
 linkedList.insertNode(1);
 
+//Helper function to find the next pivot point within a linked list
 const findNextPivotPoint = (list, x) => {
     let currentNode = list;
     
     while(currentNode) {
-       // console.log('t', currentNode.data, x)
         if(currentNode.data >= x) {
             return currentNode;
         }
@@ -32,13 +32,16 @@ const partitionList = (list, x) => {
     let pivotPoint;
  
     while(currentNode) {
+        //Set a swapping point if one is not set
         if(currentNode.data >= x && !pivotPoint) {
             pivotPoint = currentNode;
+        // If a swapping point is set, time to swap the current node with the pivot point
         } else if(currentNode.data < x && pivotPoint) {
             //Swap
             let tmp = currentNode.data;
             currentNode.data = pivotPoint.data;
             pivotPoint.data = tmp;
+            // Will need to find the next pivot point once doing the swap
             pivotPoint = findNextPivotPoint(pivotPoint, x);
         }
 
