@@ -23,6 +23,7 @@ const findNextPivotPoint = (list, x) => {
     return null;
 }
 
+//O(n) O(1)
 const partitionList = (list, x) => {
     if(!list.root) {
         return list;
