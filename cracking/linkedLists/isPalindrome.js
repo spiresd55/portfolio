@@ -42,6 +42,7 @@ const reverseList = (list) => {
     return list;
 }
 
+//TODO: Create a clone of the reverse list
 const isLinkListAPalindrome = (linkedList) => {
     // Create a non reference copy of the linkedList
     let list = Object.create(linkedList);
