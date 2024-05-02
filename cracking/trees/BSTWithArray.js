@@ -68,7 +68,7 @@ class BST {
             console.log(this.nodes[n] === data)
             if(data > this.nodes[n]) {
                 n = rightIndex;
-            } else if(data <= this.nodes[n]) {
+            } else if(data < this.nodes[n]) {
                 n = leftIndex;
             // No Branches
             } else if(data === this.nodes[n] && !this.nodes[leftIndex] && !this.nodes[rightIndex]) {
@@ -106,7 +106,7 @@ bst.insertNode(7);
 console.log(bst, bst.nodes.length);
 
 console.log('in Order print');
-bst.deleteNode(25)
+bst.deleteNode(15)
 bst.inOrderPrint();
 
 console.log(bst.nodes[3]);
