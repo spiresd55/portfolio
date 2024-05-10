@@ -1,8 +1,4 @@
-console.log('made it in the sweeper class');
-
-
 let gameBoard = document.getElementById('board');
-
 
 gameBoard.addEventListener('mousedown', (e) => {
     const {x, y} = e.target.dataset;
@@ -27,20 +23,6 @@ let visited = {};
 let isFirstTurn = true;
 
 // https://leetcode.com/problems/minesweeper/
-/*const handleClick = (event) => {
-    console.log('click click boom');
-    console.log(event)
-    console.log(event.target)
-    console.log(event.target.dataset)
-
-    
-    const {x, y} = event.target.dataset;
-    handleTurn(+x, +y);
-    console.log('coordinate', x,y);
-    console.log(board);
-    
-    //event.target.textContent = board[x][y].content;
-}*/
 
 const toggleFlagOnSquare = (x, y) => {
     let square = board[x][y];
