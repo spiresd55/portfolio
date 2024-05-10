@@ -3,11 +3,19 @@
     border: 1px solid black;
     height: 30px;
     width: 30px;
-    display: inline-block;
+    display: table-cell;
     line-height: 30px;
     cursor: pointer;
 }
 
 .row {
     height: 30px;
+}
+
+.revealed {
+    background-color: yellow;
+}
+
+.flagged {
+    background-color: red;
 }
