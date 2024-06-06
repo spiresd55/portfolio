@@ -14,8 +14,8 @@ const helper = (houses, idx =0, memo = []) => {
 }
 
 const houseRobberMemo = (houses) => {
-    
-    return Math.max(helper(houses, 0), helper(houses, 1));
+    let memo = [];
+    return Math.max(helper(houses, 0, memo), helper(houses, 1, memo));
 }
 
 
