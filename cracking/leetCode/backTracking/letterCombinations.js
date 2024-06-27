@@ -52,3 +52,47 @@ var letterCombinations = function(digits) {
     
     return output[output.length - 1];
 };
+
+/**
+ * @param {string} digits
+ * @return {string[]}
+ */
+let digitConversion = {
+    2: 'abc',
+    3: 'def',
+    4: 'ghi',
+    5: 'jkl',
+    6: 'mno',
+    7: 'pqrs',
+    8: 'tuv',
+    9: 'wxyz'
+}
+
+var letterCombinations2 = function(digits) {
+    if(!digits.length) {
+        return [];
+    }
+
+    //First layer of output
+    let output = [];
+    output[0] = digitConversion[digits[0]].split("");
+    return permute(digits, 1, output);
+}
+
+let permute = (digits, n, output) => {
+    if(n === digits.length) {
+        return output[output.length - 1];
+    }
+
+    output[n] = [];
+    let prevResults = output[n - 1];
+    let digit = digits[n];
+    let letters = digitConversion[digit];
+
+    for(let i = 0; i < letters.length; i++) {
+        for(let j = 0; j < prevResults.length; j++) {
+            output[n].push(prevResults[j] + letters[i])
+        }
+    }
+    return permute(digits, n + 1, output);
+}
