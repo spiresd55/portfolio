@@ -7,7 +7,6 @@
 // Base-8(octal)
 // Base-2 (Binary)
 
-
 // Base-10
 // 2344 = 2*10^3 + 3*10^2 + 4*10^1 + 4 * 10 ^ 0
 
@@ -187,3 +186,5 @@ console.log(37 << 3);
 
 console.log('BITWISE Unsigned right'); //Similar to the shift left operator, but the shift happens from the right
 console.log(37 >>> 3);  //00100101 -> 101 removed -> 00100 -> pad left -> 00000100 = 4 
+
+

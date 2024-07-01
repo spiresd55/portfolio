@@ -20,8 +20,8 @@ var searchMatrix = function(matrix, target) {
         //row
         let i = Math.floor(mid / m);
         //column
-        let j =  m - (((i + 1) * m) - mid)
-   
+        //let j =  m - (((i + 1) * m) - mid)
+        let j = mid % m;
         if(matrix[i][j] === target) {
             return true;
         } else if(matrix[i][j] < target) {
